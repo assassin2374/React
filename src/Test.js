@@ -18,11 +18,53 @@ class Test extends React.Component {
 
 export default Test;
 
+function Add(props) {
+  return (
+    <button onClick={props.onClick}>
+    </button>
+  );
+}
+
 class List extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: '',
+    };
+  }
+
+  inText(){
+    return(
+      <input type='Text' name='textAdd'></input>
+    )
+  }
+
+  addBotton(){
+    return(
+      <Add text={this.name}/>
+    )
+  }
+
+  outText(){
+    return(
+      <p>{this.props.text}</p>
+    )
+  }
+
   render() {
     return (
-      <input type="Text" name="name">
-      </input>
-    );
+      <div>
+        {/* input */}
+          {this.inText}
+        {/* botton */}
+        <div>
+          {this.addBotton}
+        </div>
+        {/* output */}
+        <div>
+          {this.outText}
+        </div>
+      </div>
+    )
   }
 }
