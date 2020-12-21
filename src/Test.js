@@ -26,45 +26,35 @@ function Add(props) {
 }
 
 class List extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: '',
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     text: "",
+  //   };
+  // }
 
-  inText(){
-    return(
-      <input type='Text' name='textAdd'></input>
-    )
-  }
-
-  addBotton(){
-    return(
-      <Add text={this.name}/>
-    )
-  }
-
-  outText(){
-    return(
-      <p>{this.props.text}</p>
-    )
-  }
+  // inText(){
+  //   return(
+  //     <input type='Text' name='textAdd'></input>
+  //   )
+  // }
 
   render() {
     return (
-      <div>
-        {/* input */}
-          {this.inText}
-        {/* botton */}
+      <React.Fragment>
         <div>
-          {this.addBotton}
+          {/* input */}
+          <input type='Text' name='textAdd'></input>
         </div>
-        {/* output */}
         <div>
-          {this.outText}
+          {/* botton */}
+          <Add text={this.name}/>
         </div>
-      </div>
+        <div>
+          {/* output */}
+          <p>{this.props.text}</p>
+        </div>
+      </React.Fragment>
     )
   }
 }
